@@ -41,8 +41,8 @@ function M.update(key, patch)
 
 	if has_nil(patch) then
 		local obj = assert(db[key], key)
-		log.init(key, obj)
 		util.patch(obj, patch)
+		log.init(key, obj)
 	else
 		log.update(key, patch)
 	end
